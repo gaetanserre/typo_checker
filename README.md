@@ -13,3 +13,6 @@ cd build
 cmake ..
 make or make install
 ```
+
+### Example
+![](img/example.png)
