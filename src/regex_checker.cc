@@ -40,7 +40,12 @@ unsigned int RegexChecker::_match(const std::string& line,
 }
 
 void RegexChecker::check(const std::string& file_path) {
-  ifstream file(file_path);
+  ifstream file(file_path, ios::in);
+
+  if (!file) {
+    printf("An error occurred while opening %s\n", file_path.c_str());
+    exit(-1);
+  }
   
   string line;
   unsigned int line_count = 1;
